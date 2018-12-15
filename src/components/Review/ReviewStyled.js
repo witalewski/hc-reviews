@@ -22,10 +22,14 @@ export const ReviewStyled = styled.article`
   }
 
   .content {
-    max-height: 90px;
-    margin-bottom: ${spacing.medium}px;
     position: relative;
+    margin-bottom: ${spacing.medium}px;
+  }
+
+  .content--collapsed {
     overflow: hidden;
+    max-height: 90px;
+    cursor: pointer;
   }
 
   .fade-out {

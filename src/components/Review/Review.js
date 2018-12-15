@@ -10,6 +10,7 @@ import {
   saveComment,
   cancelComment
 } from "../../state/actions/commentActions";
+import { expandText } from "../../state/actions/uiActions";
 
 import { ReviewStyled } from "./ReviewStyled";
 import { CommentConnected } from "../Comment";
@@ -22,6 +23,7 @@ export const Review = ({
   addComment,
   saveComment,
   cancelComment,
+  expandText,
   user
 }) => {
   const { author, date, title, body, thumbs, stars, comments } = reviews[
@@ -36,7 +38,10 @@ export const Review = ({
       <h2 className="title">{title}</h2>
       <div>Thumbs: {thumbs}</div>
       <div>Stars: {stars}/6</div>
-      <div className="content">
+      <div
+        className={`content ${!isTextExpanded && "content--collapsed"}`}
+        onClick={() => expandText(reviewId)}
+      >
         {body.map(line => (
           <p>{line}</p>
         ))}
@@ -82,7 +87,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
   addComment,
   saveComment,
-  cancelComment
+  cancelComment,
+  expandText
 };
 
 export const ReviewConnected = connect(
