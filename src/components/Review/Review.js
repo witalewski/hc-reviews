@@ -33,13 +33,14 @@ export const Review = ({
     <ReviewStyled>
       <UserConnected userId={author} />
       <div className="date">{formatDateForDisplay(date)}</div>
-      <h2>{title}</h2>
+      <h2 className="title">{title}</h2>
       <div>Thumbs: {thumbs}</div>
       <div>Stars: {stars}/6</div>
-      <div>
+      <div className="content">
         {body.map(line => (
           <p>{line}</p>
         ))}
+        {!isTextExpanded && <p className="fade-out" />}
       </div>
       <div>
         {comments.map(commentId => (
