@@ -16,18 +16,36 @@ describe("uiReducer", () => {
     };
     const result = uiReducer(undefined, receiveReviews(reviews));
     expect(result).toEqual({
-      review1: {},
-      review2: {}
+      review1: {
+        isTextExpanded: false,
+        isCommentBeingAdded: false
+      },
+      review2: {
+        isTextExpanded: false,
+        isCommentBeingAdded: false
+      }
     });
   });
 
   it("creates entries for received reviews (mock data)", () => {
     const result = uiReducer(undefined, receiveReviews(mockReviews));
     expect(result).toEqual({
-      review1: {},
-      review2: {},
-      review3: {},
-      review4: {}
+      review1: {
+        isTextExpanded: false,
+        isCommentBeingAdded: false
+      },
+      review2: {
+        isTextExpanded: false,
+        isCommentBeingAdded: false
+      },
+      review3: {
+        isTextExpanded: false,
+        isCommentBeingAdded: false
+      },
+      review4: {
+        isTextExpanded: false,
+        isCommentBeingAdded: false
+      }
     });
   });
 });
