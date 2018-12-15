@@ -13,7 +13,7 @@ export const reviewsReducer = (state = mockReviews, action) => {
           byId: {
             ...state.items.byId,
             [action.reviewId]: {
-              ...state.items.byId.reviewId,
+              ...state.items.byId[action.reviewId],
               comments: [...state.items.byId[action.reviewId].comments, commentId]
             }
           }

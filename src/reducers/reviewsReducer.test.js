@@ -1,5 +1,6 @@
 import { reviewsReducer } from "./reviewsReducer";
 import { saveComment } from "../actions/commentActions";
+import mockState from "../mockData/reviews.json";
 
 describe("reviewsReducer", () => {
   it("returns default state", () => {
@@ -189,6 +190,37 @@ describe("reviewsReducer", () => {
           }
         },
         allIds: ["comment1", "comment2"]
+      }
+    });
+  });
+
+  it("saves new comment in a larger structure", () => {
+    const comment = {
+      author: "user4",
+      date: "2016-09-21T16:00",
+      body: [
+        "Now eldest new tastes plenty mother called misery get. Longer excuse for county nor except met its things. Narrow enough sex moment desire are. Hold who what come that seen read age its. Contained or estimable earnestly so perceived. Imprudence he in sufficient cultivated. Delighted promotion improving acuteness an newspaper offending he. Misery in am secure theirs giving an. Design on longer thrown oppose am."
+      ]
+    };
+    const result = reviewsReducer(mockState, saveComment(comment, "review3"));
+    expect(result).toEqual({
+      ...mockState,
+      items: {
+        ...mockState.items,
+        byId: {
+          ...mockState.items.byId,
+          review3: {
+            ...mockState.items.byId.review3,
+            comments: ["comment2"]
+          }
+        }
+      },
+      comments: {
+        byId: {
+          ...mockState.comments.byId,
+          comment2: { id: "comment2", ...comment }
+        },
+        allIds: [...mockState.comments.allIds, "comment2"]
       }
     });
   });
