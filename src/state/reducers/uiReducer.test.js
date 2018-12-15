@@ -111,7 +111,7 @@ describe("uiReducer", () => {
         isCommentBeingAdded: false
       }
     };
-    const result = uiReducer(initialState, saveComment("review1"));
+    const result = uiReducer(initialState, saveComment(null,"review1"));
     expect(result).toEqual({
       review1: {
         isTextExpanded: false,
@@ -119,7 +119,7 @@ describe("uiReducer", () => {
       },
       review2: {
         isTextExpanded: false,
-        isCommentBeingAdded: true
+        isCommentBeingAdded: false
       }
     });
   });
