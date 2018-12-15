@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/witalewski/hc-reviews.svg?branch=master)](https://travis-ci.org/witalewski/hc-reviews)
+[![Storybook](https://github.com/storybooks/press/blob/master/badges/storybook.svg)](https://witalewski.tech/hc-reviews/storybook/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
