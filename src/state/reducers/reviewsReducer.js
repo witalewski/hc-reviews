@@ -1,4 +1,3 @@
-import mockReviews from "../mocks/reviews.json";
 import { SAVE_COMMENT } from "../actions/commentActions";
 import { RECEIVE_REVIEWS } from "../actions/reviewActions";
 
