@@ -3,9 +3,11 @@ import mockReviews from "./mocks/reviews.json";
 
 import { receiveReviews } from "./actions/reviewActions";
 import { reviewsReducer } from "./reducers/reviewsReducer";
+import { uiReducer } from "./reducers/uiReducer";
 
 const reducers = {
-  reviews: reviewsReducer
+  reviews: reviewsReducer,
+  ui: uiReducer
 };
 
 const initStore = store => {
