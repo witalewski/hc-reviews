@@ -1,16 +1,29 @@
-import React from "react";
+import React, { createRef } from "react";
 import { connect } from "react-redux";
 import { format } from "date-fns";
 
-import { addComment, saveComment, cancelComment } from "../../state/actions/commentActions";
+import {
+  addComment,
+  saveComment,
+  cancelComment
+} from "../../state/actions/commentActions";
 
 import { CommentConnected } from "../Comment";
 
-export const Review = ({ reviews, reviewId, ui, addComment, saveComment, cancelComment }) => {
+export const Review = ({
+  reviews,
+  reviewId,
+  ui,
+  addComment,
+  saveComment,
+  cancelComment,
+  user
+}) => {
   const { author, date, title, body, thumbs, stars, comments } = reviews[
     reviewId
   ];
   const { isTextExpanded, isCommentBeingAdded } = ui[reviewId];
+  const commentInputRef = createRef();
   return (
     <article>
       <div>Author: {author}</div>
@@ -30,8 +43,21 @@ export const Review = ({ reviews, reviewId, ui, addComment, saveComment, cancelC
       </div>
       {isCommentBeingAdded ? (
         <div>
-          <textarea />
-          <button>Save comment</button>
+          <textarea ref={commentInputRef} />
+          <button
+            onClick={() =>
+              saveComment(
+                {
+                  author: user.id,
+                  body: commentInputRef.current.value.split(/\n/g),
+                  date: format(new Date(), "yyyy-MM-dd HH:mm")
+                },
+                reviewId
+              )
+            }
+          >
+            Save comment
+          </button>
           <button onClick={() => cancelComment(reviewId)}>Cancel</button>
         </div>
       ) : (
@@ -43,7 +69,8 @@ export const Review = ({ reviews, reviewId, ui, addComment, saveComment, cancelC
 
 const mapStateToProps = state => ({
   reviews: state.reviews.items.byId,
-  ui: state.ui
+  ui: state.ui,
+  user: state.user
 });
 
 const mapDispatchToProps = {
