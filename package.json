@@ -5,6 +5,8 @@
   "private": true,
   "dependencies": {
     "@babel/plugin-syntax-jsx": "^7.2.0",
+    "@emotion/core": "^10.0.5",
+    "@emotion/styled": "^10.0.5",
     "date-fns": "^2.0.0-alpha.26",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
