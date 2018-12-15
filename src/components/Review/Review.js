@@ -1,6 +1,9 @@
 import React, { createRef } from "react";
 import { connect } from "react-redux";
-import { format } from "date-fns";
+import {
+  formatDateForDisplay,
+  formatDateForPersistence
+} from "../../utils/dateFormatter";
 
 import {
   addComment,
@@ -8,7 +11,7 @@ import {
   cancelComment
 } from "../../state/actions/commentActions";
 
-import {ReviewStyled} from "./ReviewStyled";
+import { ReviewStyled } from "./ReviewStyled";
 import { CommentConnected } from "../Comment";
 import { UserConnected } from "../User";
 
@@ -29,7 +32,7 @@ export const Review = ({
   return (
     <ReviewStyled>
       <UserConnected userId={author} />
-      <div>Date: {format(date, "d MMMM yyyy")}</div>
+      <div>{formatDateForDisplay(date)}</div>
       <h2>{title}</h2>
       <div>Thumbs: {thumbs}</div>
       <div>Stars: {stars}/6</div>
@@ -52,7 +55,7 @@ export const Review = ({
                 {
                   author: user.id,
                   body: commentInputRef.current.value.split(/\n/g),
-                  date: format(new Date(), "yyyy-MM-dd HH:mm")
+                  date: formatDateForPersistence(new Date())
                 },
                 reviewId
               )
