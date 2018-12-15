@@ -10,5 +10,6 @@ export const spacing = {
 export const colors = {
   lightGray: "#f5f6f7",
   darkGray: "#666666",
-  blue: "#0058a3"
+  blue: "#0058a3",
+  yellow: "#fad73c"
 };

@@ -5,7 +5,7 @@ export const ReviewStyled = styled.article`
   margin: -132px 160px 200px 160px;
   background: white;
 
-  padding: 0 ${spacing.extraLarge}px;
+  padding: 0 ${spacing.extraLarge}px ${spacing.medium}px;
 
   display: flex;
   flex-direction: column;
@@ -39,5 +39,21 @@ export const ReviewStyled = styled.article`
     width: 100%;
     height: 40px;
     background-image: linear-gradient(to bottom, transparent, white);
+  }
+
+  .comment-button {
+    width: 230px;
+    height: 50px;
+
+    border: none;
+
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: ${colors.blue};
+
+    background: ${colors.yellow};
+
+    cursor: pointer;
   }
 `;

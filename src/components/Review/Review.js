@@ -56,6 +56,7 @@ export const Review = ({
         <div>
           <textarea ref={commentInputRef} />
           <button
+            className="comment-button"
             onClick={() =>
               saveComment(
                 {
@@ -69,10 +70,17 @@ export const Review = ({
           >
             Save comment
           </button>
-          <button onClick={() => cancelComment(reviewId)}>Cancel</button>
+          <button
+            className="comment-button"
+            onClick={() => cancelComment(reviewId)}
+          >
+            Cancel
+          </button>
         </div>
       ) : (
-        <button onClick={() => addComment(reviewId)}>Add comment</button>
+        <button className="comment-button" onClick={() => addComment(reviewId)}>
+          Add comment
+        </button>
       )}
     </ReviewStyled>
   );
