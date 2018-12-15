@@ -1,6 +1,6 @@
 import { reviewsReducer } from "./reviewsReducer";
 import { saveComment } from "../actions/commentActions";
-import mockState from "../mockData/reviews.json";
+import mockState from "../mocks/reviews.json";
 
 describe("reviewsReducer", () => {
   it("returns default state", () => {

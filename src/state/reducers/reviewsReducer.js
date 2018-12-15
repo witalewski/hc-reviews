@@ -1,6 +1,10 @@
-import mockReviews from "../mockData/reviews.json";
+import mockReviews from "../mocks/reviews.json";
 import { SAVE_COMMENT } from "../actions/commentActions";
-import { getNextId } from "../helpers/idHelper";
+
+const getNextId = (label, ids) =>
+  `${label}${
+    ids.length ? parseInt(ids[ids.length - 1].match(/\d+/)[0]) + 1 : 1
+  }`;
 
 export const reviewsReducer = (state = mockReviews, action) => {
   switch (action.type) {

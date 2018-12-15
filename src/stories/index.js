@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 
-import mockData from "../mockData/reviews.json";
+import mockData from "../state/mocks/reviews.json";
 import { Review } from "../components/Review";
 import { Comment } from "../components/Comment";
 
