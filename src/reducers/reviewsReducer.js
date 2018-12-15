@@ -5,7 +5,7 @@ import { getNextId } from "../helpers/idHelper";
 export const reviewsReducer = (state = mockReviews, action) => {
   switch (action.type) {
     case SAVE_COMMENT:
-      const commentId = getNextId("comment",state.comments.allIds);
+      const commentId = getNextId("comment", state.comments.allIds);
       return {
         ...state,
         items: {
@@ -14,7 +14,10 @@ export const reviewsReducer = (state = mockReviews, action) => {
             ...state.items.byId,
             [action.reviewId]: {
               ...state.items.byId[action.reviewId],
-              comments: [...state.items.byId[action.reviewId].comments, commentId]
+              comments: [
+                ...state.items.byId[action.reviewId].comments,
+                commentId
+              ]
             }
           }
         },
