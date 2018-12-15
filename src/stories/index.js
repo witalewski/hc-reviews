@@ -4,9 +4,8 @@ import { storiesOf } from "@storybook/react";
 
 import { store } from "../state/store";
 
-import mockData from "../state/mocks/reviews.json";
 import { ReviewConnected } from "../components/Review";
-import { Comment } from "../components/Comment";
+import { CommentConnected } from "../components/Comment";
 
 const addProvider = story => <Provider store={store}>{story()}</Provider>;
 
@@ -20,5 +19,5 @@ storiesOf("Review", module)
 storiesOf("Comment", module)
   .addDecorator(addProvider)
   .add("Comment 1", () => (
-    <Comment comments={mockData.comments.byId} commentId="comment1" />
+    <CommentConnected commentId="comment1" />
   ));

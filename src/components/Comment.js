@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import { format } from "date-fns";
 
 export const Comment = ({ comments, commentId }) => {
@@ -17,3 +18,9 @@ export const Comment = ({ comments, commentId }) => {
     </aside>
   );
 };
+
+const mapStateToProps = state => ({
+  comments: state.reviews.comments.byId
+});
+
+export const CommentConnected = connect(mapStateToProps)(Comment);
