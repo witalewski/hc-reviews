@@ -1,14 +1,15 @@
 {
-  "main.css": "/hc-reviews/static/css/main.b11ab253.chunk.css",
-  "main.js": "/hc-reviews/static/js/main.316ace61.chunk.js",
-  "main.js.map": "/hc-reviews/static/js/main.316ace61.chunk.js.map",
-  "static/js/1.82dafdb5.chunk.js": "/hc-reviews/static/js/1.82dafdb5.chunk.js",
-  "static/js/1.82dafdb5.chunk.js.map": "/hc-reviews/static/js/1.82dafdb5.chunk.js.map",
+  "main.css": "/hc-reviews/static/css/main.1bcfd7a2.chunk.css",
+  "main.js": "/hc-reviews/static/js/main.a74db5a4.chunk.js",
+  "main.js.map": "/hc-reviews/static/js/main.a74db5a4.chunk.js.map",
+  "static/js/1.e476e4ac.chunk.js": "/hc-reviews/static/js/1.e476e4ac.chunk.js",
+  "static/js/1.e476e4ac.chunk.js.map": "/hc-reviews/static/js/1.e476e4ac.chunk.js.map",
   "runtime~main.js": "/hc-reviews/static/js/runtime~main.229ef04c.js",
   "runtime~main.js.map": "/hc-reviews/static/js/runtime~main.229ef04c.js.map",
-  "static/media/logo.svg": "/hc-reviews/static/media/logo.5d5d9eef.svg",
-  "static/css/main.b11ab253.chunk.css.map": "/hc-reviews/static/css/main.b11ab253.chunk.css.map",
+  "static/css/main.1bcfd7a2.chunk.css.map": "/hc-reviews/static/css/main.1bcfd7a2.chunk.css.map",
+  "static/media/background.jpg": "/hc-reviews/static/media/background.6e926839.jpg",
+  "static/media/logo.svg": "/hc-reviews/static/media/logo.b11697ee.svg",
   "index.html": "/hc-reviews/index.html",
-  "precache-manifest.e1d9696ced4f18ff837c17ff62a7ce40.js": "/hc-reviews/precache-manifest.e1d9696ced4f18ff837c17ff62a7ce40.js",
+  "precache-manifest.802bdd8c4b116b1db7dc1278b0de2650.js": "/hc-reviews/precache-manifest.802bdd8c4b116b1db7dc1278b0de2650.js",
   "service-worker.js": "/hc-reviews/service-worker.js"
 }
