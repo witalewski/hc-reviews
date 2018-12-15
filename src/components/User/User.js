@@ -8,7 +8,7 @@ export const User = ({ users, userId }) => {
   return (
     <UserStyled>
       <img className="picture" src={picture} alt={name} />
-      <div>{name}</div>
+      <a href="/">{name}</a>
       {role && <div>{role}</div>}
     </UserStyled>
   );
