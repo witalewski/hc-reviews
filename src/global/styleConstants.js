@@ -1,5 +1,11 @@
 export const maxContainerWidth = 960;
+export const imageDimensions = 72;
+export const spacing = {
+  extraSmall: 4,
+  small: 8
+};
 export const colors = {
-  primaryGray: "#f5f6f7",
-  primaryBlue: "#0058a3"
+  lightGray: "#f5f6f7",
+  darkGray: "#666666",
+  blue: "#0058a3"
 };

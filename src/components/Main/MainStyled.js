@@ -11,5 +11,5 @@ export const MainStyled = styled.main`
   flex-direction: column;
   align-items: center;
 
-  background: ${colors.primaryGray};
+  background: ${colors.lightGray};
 `;

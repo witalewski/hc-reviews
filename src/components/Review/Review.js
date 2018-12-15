@@ -32,7 +32,7 @@ export const Review = ({
   return (
     <ReviewStyled>
       <UserConnected userId={author} />
-      <div>{formatDateForDisplay(date)}</div>
+      <div className="date">{formatDateForDisplay(date)}</div>
       <h2>{title}</h2>
       <div>Thumbs: {thumbs}</div>
       <div>Stars: {stars}/6</div>
