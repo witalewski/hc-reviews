@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import { format } from "date-fns";
 
 export const Review = ({ reviews, reviewId }) => {
@@ -26,3 +27,9 @@ export const Review = ({ reviews, reviewId }) => {
     </article>
   );
 };
+
+const mapStateToProps = state => ({
+  reviews: state.reviews.items.byId
+});
+
+export const ReviewConnected = connect(mapStateToProps)(Review);
