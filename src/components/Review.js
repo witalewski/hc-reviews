@@ -2,6 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { format } from "date-fns";
 
+import { CommentConnected } from "./Comment";
+
 export const Review = ({ reviews, reviewId }) => {
   const { author, date, title, body, thumbs, stars, comments } = reviews[
     reviewId
@@ -19,8 +21,8 @@ export const Review = ({ reviews, reviewId }) => {
         ))}
       </div>
       <div>
-        {comments.map(comment => (
-          <p>{comment}</p>
+        {comments.map(commentId => (
+          <CommentConnected commentId={commentId} />
         ))}
       </div>
       <button>Add comment</button>
