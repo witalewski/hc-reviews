@@ -4,10 +4,11 @@ import { format } from "date-fns";
 
 import { CommentConnected } from "../Comment";
 
-export const Review = ({ reviews, reviewId }) => {
+export const Review = ({ reviews, reviewId, ui }) => {
   const { author, date, title, body, thumbs, stars, comments } = reviews[
     reviewId
   ];
+  const { isTextExpanded, isCommentBeingAdded } = ui[reviewId];
   return (
     <article>
       <div>Author: {author}</div>
@@ -25,13 +26,22 @@ export const Review = ({ reviews, reviewId }) => {
           <CommentConnected commentId={commentId} />
         ))}
       </div>
-      <button>Add comment</button>
+      {isCommentBeingAdded ? (
+        <div>
+          <textarea />
+          <button>Save comment</button>
+          <button>Add cancel</button>
+        </div>
+      ) : (
+        <button>Add comment</button>
+      )}
     </article>
   );
 };
 
 const mapStateToProps = state => ({
-  reviews: state.reviews.items.byId
+  reviews: state.reviews.items.byId,
+  ui: state.ui
 });
 
 export const ReviewConnected = connect(mapStateToProps)(Review);
