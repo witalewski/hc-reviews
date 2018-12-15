@@ -9,6 +9,7 @@ import {
 } from "../../state/actions/commentActions";
 
 import { CommentConnected } from "../Comment";
+import { UserConnected } from "../User";
 
 export const Review = ({
   reviews,
@@ -26,7 +27,7 @@ export const Review = ({
   const commentInputRef = createRef();
   return (
     <article>
-      <div>Author: {author}</div>
+      <UserConnected userId={author} />
       <div>Date: {format(date, "d MMMM yyyy")}</div>
       <h2>{title}</h2>
       <div>Thumbs: {thumbs}</div>
