@@ -1,14 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
 
+import { UserStyled } from "./UserStyled";
+
 export const User = ({ users, userId }) => {
   const { name, picture, role } = users[userId];
   return (
-    <section>
-      <img src={picture} alt={name} />
+    <UserStyled>
+      <img className="picture" src={picture} alt={name} />
       <div>{name}</div>
       {role && <div>{role}</div>}
-    </section>
+    </UserStyled>
   );
 };
 

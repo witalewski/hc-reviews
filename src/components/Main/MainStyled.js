@@ -5,6 +5,8 @@ export const MainStyled = styled.main`
   width: 100%;
   max-width: ${maxContainerWidth}px;
 
+  margin-top: 200px;
+
   display: flex;
   flex-direction: column;
   align-items: center;

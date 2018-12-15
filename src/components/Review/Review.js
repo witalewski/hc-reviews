@@ -8,6 +8,7 @@ import {
   cancelComment
 } from "../../state/actions/commentActions";
 
+import {ReviewStyled} from "./ReviewStyled";
 import { CommentConnected } from "../Comment";
 import { UserConnected } from "../User";
 
@@ -26,7 +27,7 @@ export const Review = ({
   const { isTextExpanded, isCommentBeingAdded } = ui[reviewId];
   const commentInputRef = createRef();
   return (
-    <article>
+    <ReviewStyled>
       <UserConnected userId={author} />
       <div>Date: {format(date, "d MMMM yyyy")}</div>
       <h2>{title}</h2>
@@ -64,7 +65,7 @@ export const Review = ({
       ) : (
         <button onClick={() => addComment(reviewId)}>Add comment</button>
       )}
-    </article>
+    </ReviewStyled>
   );
 };
 
