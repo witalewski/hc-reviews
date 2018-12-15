@@ -2,6 +2,8 @@ import React from "react";
 import { Provider } from "react-redux";
 import { storiesOf } from "@storybook/react";
 
+import "../index.css";
+
 import { store } from "../state/store";
 
 import { ReviewConnected } from "../components/Review";
