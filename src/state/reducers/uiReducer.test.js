@@ -4,6 +4,7 @@ import { uiReducer } from "./uiReducer";
 
 import { receiveReviews } from "../actions/reviewActions";
 import { addComment, saveComment, cancelComment } from "../actions/commentActions";
+import { expandText } from "../actions/uiActions";
 
 describe("uiReducer", () => {
   it("returns default state", () => {
@@ -123,6 +124,7 @@ describe("uiReducer", () => {
       }
     });
   });
+
   it("removes new comment input when it is cancelled", () => {
     const initialState = {
       review1: {
@@ -142,6 +144,30 @@ describe("uiReducer", () => {
       },
       review2: {
         isTextExpanded: false,
+        isCommentBeingAdded: false
+      }
+    });
+  });
+
+  it("expands review text", () => {
+    const initialState = {
+      review1: {
+        isTextExpanded: false,
+        isCommentBeingAdded: false
+      },
+      review2: {
+        isTextExpanded: false,
+        isCommentBeingAdded: true
+      }
+    };
+    const result = uiReducer(initialState, expandText("review2"));
+    expect(result).toEqual({
+      review1: {
+        isTextExpanded: false,
+        isCommentBeingAdded: true
+      },
+      review2: {
+        isTextExpanded: true,
         isCommentBeingAdded: false
       }
     });
