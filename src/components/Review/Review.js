@@ -2,11 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import { format } from "date-fns";
 
-import { addComment, saveComment } from "../../state/actions/commentActions";
+import { addComment, saveComment, cancelComment } from "../../state/actions/commentActions";
 
 import { CommentConnected } from "../Comment";
 
-export const Review = ({ reviews, reviewId, ui, addComment, saveComment }) => {
+export const Review = ({ reviews, reviewId, ui, addComment, saveComment, cancelComment }) => {
   const { author, date, title, body, thumbs, stars, comments } = reviews[
     reviewId
   ];
@@ -32,7 +32,7 @@ export const Review = ({ reviews, reviewId, ui, addComment, saveComment }) => {
         <div>
           <textarea />
           <button>Save comment</button>
-          <button>Add cancel</button>
+          <button onClick={() => cancelComment(reviewId)}>Cancel</button>
         </div>
       ) : (
         <button onClick={() => addComment(reviewId)}>Add comment</button>
@@ -48,7 +48,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   addComment,
-  saveComment
+  saveComment,
+  cancelComment
 };
 
 export const ReviewConnected = connect(
