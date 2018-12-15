@@ -6,11 +6,15 @@ import "../index.css";
 
 import { store } from "../state/store";
 
+import { Header } from "../components/Header";
 import { ReviewConnected } from "../components/Review";
 import { CommentConnected } from "../components/Comment";
 import { UserConnected } from "../components/User";
 
 const addProvider = story => <Provider store={store}>{story()}</Provider>;
+
+storiesOf("Header", module)
+  .add("Header", () => <Header  />)
 
 storiesOf("User", module)
   .addDecorator(addProvider)
