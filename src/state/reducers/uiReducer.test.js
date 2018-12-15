@@ -1,6 +1,9 @@
-import { uiReducer } from "./uiReducer";
-import { receiveReviews } from "../actions/reviewActions";
 import mockReviews from "../mocks/reviews.json";
+
+import { uiReducer } from "./uiReducer";
+
+import { receiveReviews } from "../actions/reviewActions";
+import { addComment, saveComment } from "../actions/commentActions";
 
 describe("uiReducer", () => {
   it("returns default state", () => {
@@ -45,6 +48,78 @@ describe("uiReducer", () => {
       review4: {
         isTextExpanded: false,
         isCommentBeingAdded: false
+      }
+    });
+  });
+
+  it("adds new comment to a review", () => {
+    const initialState = {
+      review1: {
+        isTextExpanded: false,
+        isCommentBeingAdded: false
+      },
+      review2: {
+        isTextExpanded: false,
+        isCommentBeingAdded: false
+      }
+    };
+    const result = uiReducer(initialState, addComment("review1"));
+    expect(result).toEqual({
+      review1: {
+        isTextExpanded: false,
+        isCommentBeingAdded: true
+      },
+      review2: {
+        isTextExpanded: false,
+        isCommentBeingAdded: false
+      }
+    });
+  });
+
+  it("adds new comment to another review", () => {
+    const initialState = {
+      review1: {
+        isTextExpanded: false,
+        isCommentBeingAdded: true
+      },
+      review2: {
+        isTextExpanded: false,
+        isCommentBeingAdded: false
+      }
+    };
+    const result = uiReducer(initialState, addComment("review2"));
+    expect(result).toEqual({
+      review1: {
+        isTextExpanded: false,
+        isCommentBeingAdded: true
+      },
+      review2: {
+        isTextExpanded: false,
+        isCommentBeingAdded: true
+      }
+    });
+  });
+
+  it("removes new comment input when it is saved", () => {
+    const initialState = {
+      review1: {
+        isTextExpanded: false,
+        isCommentBeingAdded: true
+      },
+      review2: {
+        isTextExpanded: false,
+        isCommentBeingAdded: false
+      }
+    };
+    const result = uiReducer(initialState, saveComment("review1"));
+    expect(result).toEqual({
+      review1: {
+        isTextExpanded: false,
+        isCommentBeingAdded: false
+      },
+      review2: {
+        isTextExpanded: false,
+        isCommentBeingAdded: true
       }
     });
   });
