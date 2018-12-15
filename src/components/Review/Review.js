@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { format } from "date-fns";
 
-import { CommentConnected } from "./Comment";
+import { CommentConnected } from "../Comment";
 
 export const Review = ({ reviews, reviewId }) => {
   const { author, date, title, body, thumbs, stars, comments } = reviews[

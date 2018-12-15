@@ -1,0 +1,1 @@
+export { CommentConnected } from "./Comment";
