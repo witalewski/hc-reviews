@@ -3,11 +3,12 @@ import { connect } from "react-redux";
 import { format } from "date-fns";
 
 import { UserConnected } from "../User";
+import { CommentStyled } from "./CommentStyled";
 
 export const Comment = ({ comments, commentId }) => {
   const { author, date, body } = comments[commentId];
   return (
-    <aside>
+    <CommentStyled>
       <div>
         {body.map(line => (
           <p>{line}</p>
@@ -15,7 +16,7 @@ export const Comment = ({ comments, commentId }) => {
       </div>
       <div>Date: {format(date, "d MMMM yyyy")}</div>
       <UserConnected userId={author} />
-    </aside>
+    </CommentStyled>
   );
 };
 
