@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+
+import { AppStyled } from "./AppStyled";
 
 class App extends Component {
   render() {
-    return (
-      <div className="App">
-        
-      </div>
-    );
+    return <AppStyled className="App" />;
   }
 }
 
