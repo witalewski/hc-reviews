@@ -164,11 +164,11 @@ describe("uiReducer", () => {
     expect(result).toEqual({
       review1: {
         isTextExpanded: false,
-        isCommentBeingAdded: true
+        isCommentBeingAdded: false
       },
       review2: {
         isTextExpanded: true,
-        isCommentBeingAdded: false
+        isCommentBeingAdded: true
       }
     });
   });

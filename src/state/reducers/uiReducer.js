@@ -1,5 +1,6 @@
 import { RECEIVE_REVIEWS } from "../actions/reviewActions";
 import { ADD_COMMENT, SAVE_COMMENT, CANCEL_COMMENT } from "../actions/commentActions";
+import { EXPAND_TEXT } from "../actions/uiActions";
 
 const createInitialEntry = () => ({
   isTextExpanded: false,
@@ -11,6 +12,13 @@ const setIsCommentBeingAdded = (state, reviewId, isCommentBeingAdded) => ({
   [reviewId]: {
     ...state[reviewId],
     isCommentBeingAdded
+  }
+});
+const setIsTextExpanded = (state, reviewId, isTextExpanded) => ({
+  ...state,
+  [reviewId]: {
+    ...state[reviewId],
+    isTextExpanded
   }
 });
 
@@ -29,6 +37,8 @@ export const uiReducer = (state = {}, action) => {
     case SAVE_COMMENT:
     case CANCEL_COMMENT:
       return setIsCommentBeingAdded(state, action.reviewId, false);
+      case EXPAND_TEXT:
+      return setIsTextExpanded(state, action.reviewId, true);
     default:
       return state;
   }
