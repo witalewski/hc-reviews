@@ -1,7 +1,7 @@
 {
   "main.css": "/hc-reviews/static/css/main.e1e8dd70.chunk.css",
-  "main.js": "/hc-reviews/static/js/main.00234a31.chunk.js",
-  "main.js.map": "/hc-reviews/static/js/main.00234a31.chunk.js.map",
+  "main.js": "/hc-reviews/static/js/main.895a04da.chunk.js",
+  "main.js.map": "/hc-reviews/static/js/main.895a04da.chunk.js.map",
   "static/js/1.05a5bed0.chunk.js": "/hc-reviews/static/js/1.05a5bed0.chunk.js",
   "static/js/1.05a5bed0.chunk.js.map": "/hc-reviews/static/js/1.05a5bed0.chunk.js.map",
   "runtime~main.js": "/hc-reviews/static/js/runtime~main.229ef04c.js",
@@ -11,6 +11,6 @@
   "static/media/logo.svg": "/hc-reviews/static/media/logo.b11697ee.svg",
   "static/media/background.jpg": "/hc-reviews/static/media/background.6e926839.jpg",
   "index.html": "/hc-reviews/index.html",
-  "precache-manifest.1e890221231fd385b732f09e697f410d.js": "/hc-reviews/precache-manifest.1e890221231fd385b732f09e697f410d.js",
+  "precache-manifest.42943e460263de3cb58529cb38ec8d7b.js": "/hc-reviews/precache-manifest.42943e460263de3cb58529cb38ec8d7b.js",
   "service-worker.js": "/hc-reviews/service-worker.js"
 }
