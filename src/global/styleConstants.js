@@ -11,7 +11,6 @@ export const fontSize = {
 };
 
 export const spacing = {
-  epsilon: 0.1,
   smallest: 4,
   smaller: 8,
   small: 16,
