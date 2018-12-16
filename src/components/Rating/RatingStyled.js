@@ -1,9 +1,11 @@
 import styled from "@emotion/styled";
 import { colors, spacing } from "../../global/styleConstants";
 
-export const RatingStyled = styled.div`
+export const RatingStyled = styled.section`
   width: 306px;
   height: 48px;
+
+  margin-bottom: ${spacing.smaller}px;
 
   display: flex;
   align-items: stretch;

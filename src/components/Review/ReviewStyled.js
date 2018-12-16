@@ -11,7 +11,7 @@ export const ReviewStyled = styled.article`
   flex-direction: column;
   align-items: center;
 
-  box-shadow: 0px 30px 40px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 30px 10px rgba(0, 0, 0, 0.1);
 
   transform: translateY(-132px);
 
@@ -24,6 +24,8 @@ export const ReviewStyled = styled.article`
 
   .comments-list {
     list-style: none;
+    margin-top: 0;
+    margin-bottom: ${spacing.medium}px;
     padding: 0;
     align-self: stretch;
   }

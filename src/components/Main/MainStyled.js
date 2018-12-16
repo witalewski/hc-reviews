@@ -5,7 +5,7 @@ export const MainStyled = styled.main`
   width: 100%;
   max-width: ${maxContainerWidth}px;
 
-  margin-top: 360px;
+  margin-top: 340px;
 
   display: flex;
   flex-direction: column;

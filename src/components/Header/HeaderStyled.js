@@ -4,6 +4,7 @@ import { maxContainerWidth } from "../../global/styleConstants";
 export const HeaderStyled = styled.header`
   width: 100%;
   max-width: ${maxContainerWidth}px;
+  height: 110px;
 
   display: flex;
   justify-content: space-between;

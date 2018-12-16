@@ -14,7 +14,7 @@ export const spacing = {
 export const colors = {
   lightGray: "#f5f6f7",
   mediumLightGray: "#edf0f2",
-  darkGray: "#666666",
+  darkGray: "#909090",
   blue: "#0058a3",
   yellow: "#fad73c",
   green: "#54b13f",

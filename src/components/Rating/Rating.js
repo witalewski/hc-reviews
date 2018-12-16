@@ -3,13 +3,13 @@ import { connect } from "react-redux";
 import { range } from "../../utils/range";
 import { RatingStyled } from "./RatingStyled";
 
-const getStar = (i, className) => (
+const createStar = (i, className) => (
   <li key={`star-${i}-${className}`}>
     <i className={`fas fa-star fa-lg ${className}`} />
   </li>
 );
-const getStars = stars =>
-  range(1, 6).map(i => getStar(i, i <= stars ? "full" : "empty"));
+const createStars = starRating =>
+  range(1, 6).map(i => createStar(i, i <= starRating ? "full" : "empty"));
 
 export const Rating = ({ reviewId, reviews }) => {
   const { thumbs, stars } = reviews[reviewId];
@@ -19,7 +19,7 @@ export const Rating = ({ reviewId, reviews }) => {
         <i className={`fas fa-thumbs-${thumbs} fa-lg`} />
       </div>
       <div className="stars">
-        <ul className="stars-list">{getStars(stars)}</ul>
+        <ul className="stars-list">{createStars(stars)}</ul>
         <div className="stars-description">{stars}/6</div>
       </div>
     </RatingStyled>

@@ -3,11 +3,11 @@ import { spacing } from "../../global/styleConstants";
 
 export const ExpandableContentStyled = styled.div`
   position: relative;
-  margin-bottom: ${spacing.medium}px;
+  margin-bottom: ${spacing.mediumSmall}px;
   padding: 0 ${spacing.mediumLarge}px;
 
   &.collapsed {
-    max-height: 90px;
+    max-height: 110px;
     overflow: hidden;
     cursor: pointer;
   }

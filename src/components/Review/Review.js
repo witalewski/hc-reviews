@@ -23,9 +23,7 @@ const getCommentListItem = commentId => (
 );
 
 export const Review = ({ reviews, reviewId, ui, addComment }) => {
-  const { author, date, title, body, comments } = reviews[
-    reviewId
-  ];
+  const { author, date, title, body, comments } = reviews[reviewId];
   const { isCommentBeingAdded } = ui[reviewId];
   return (
     <ReviewStyled>
@@ -38,7 +36,9 @@ export const Review = ({ reviews, reviewId, ui, addComment }) => {
         className="content"
         body={body}
       />
-      <ul className="comments-list">{comments.map(getCommentListItem)}</ul>
+      {comments.length > 0 && (
+        <ul className="comments-list">{comments.map(getCommentListItem)}</ul>
+      )}
       {isCommentBeingAdded ? (
         <NewCommentConnected reviewId={reviewId} />
       ) : (

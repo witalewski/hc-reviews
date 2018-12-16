@@ -21,7 +21,6 @@ export const CommentStyled = styled.aside`
       ${spacing.mediumSmall}px;
     padding: 0;
     text-align: center;
-    font-size: 14px;
     font-weight: 600;
   }
 
