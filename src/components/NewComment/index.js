@@ -1,0 +1,2 @@
+export { NewCommentConnected } from "./NewComment";
+

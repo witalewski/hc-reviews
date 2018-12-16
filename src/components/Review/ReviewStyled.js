@@ -16,20 +16,4 @@ export const ReviewStyled = styled.article`
     font-weight: 300;
     padding: 0 ${spacing.mediumLarge}px;
   }
-
-  .comment-button {
-    width: 230px;
-    height: 50px;
-
-    border: none;
-
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: ${colors.blue};
-
-    background: ${colors.yellow};
-
-    cursor: pointer;
-  }
 `;

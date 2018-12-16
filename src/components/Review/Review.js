@@ -1,6 +1,5 @@
-import React, { createRef } from "react";
+import React from "react";
 import { connect } from "react-redux";
-import { formatDateForPersistence } from "../../utils/dateFormatter";
 
 import {
   addComment,
@@ -13,22 +12,14 @@ import { CommentConnected } from "../Comment";
 import { UserConnected } from "../User";
 import { ExpandableContentConnected } from "../ExpandableContent";
 import { Date } from "../Date";
+import { NewCommentConnected } from "../NewComment";
+import { ActionButton } from "../ActionButton";
 
-export const Review = ({
-  reviews,
-  reviewId,
-  ui,
-  addComment,
-  saveComment,
-  cancelComment,
-  user
-}) => {
+export const Review = ({ reviews, reviewId, ui, addComment }) => {
   const { author, date, title, body, thumbs, stars, comments } = reviews[
     reviewId
   ];
   const { isCommentBeingAdded } = ui[reviewId];
-  const { nextCommentId } = ui;
-  const commentInputRef = createRef();
   return (
     <ReviewStyled>
       <UserConnected userId={author} />
@@ -47,37 +38,11 @@ export const Review = ({
         ))}
       </div>
       {isCommentBeingAdded ? (
-        <div>
-          <textarea ref={commentInputRef} />
-          <button
-            className="comment-button"
-            onClick={() =>
-              saveComment(
-                {
-                  id: nextCommentId,
-                  author: user.id,
-                  body: commentInputRef.current.value
-                    .split(/\n/g)
-                    .filter(line => line.length),
-                  date: formatDateForPersistence(new Date())
-                },
-                reviewId
-              )
-            }
-          >
-            Save comment
-          </button>
-          <button
-            className="comment-button"
-            onClick={() => cancelComment(reviewId)}
-          >
-            Cancel
-          </button>
-        </div>
+        <NewCommentConnected reviewId={reviewId} />
       ) : (
-        <button className="comment-button" onClick={() => addComment(reviewId)}>
+        <ActionButton onClick={() => addComment(reviewId)}>
           Add comment
-        </button>
+        </ActionButton>
       )}
     </ReviewStyled>
   );
