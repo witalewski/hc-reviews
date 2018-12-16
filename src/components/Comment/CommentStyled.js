@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import commentBackground from "../../assets/commentBackground.svg";
-import { spacing, colors } from "../../global/styleConstants";
+import { spacing, colors, fontSize } from "../../global/styleConstants";
 
 export const CommentStyled = styled.aside`
   margin-bottom: 100px;
@@ -47,7 +47,7 @@ export const CommentStyled = styled.aside`
 
   .comment-author {
     margin-top: -72px;
-    font-size: 11px;
+    font-size: ${fontSize.smaller}px;
     transform: translateY(72px);
 
     .picture {

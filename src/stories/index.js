@@ -11,19 +11,22 @@ import { Header } from "../components/Header";
 import { ReviewConnected } from "../components/Review";
 import { ExpandableContentConnected } from "../components/ExpandableContent";
 import { UserConnected } from "../components/User";
+import { Rating } from "../components/Rating/Rating";
 
 const providerDecorator = story => <Provider store={store}>{story()}</Provider>;
-const reviewDecorator = story => (
+
+const centeredWithTopMarginDecorator = story => (
   <div
     style={{
-      paddingTop: 200,
-      paddingBottom: 200,
-      background: colors.lightGray
+      display: "flex",
+      justifyContent: "center",
+      paddingTop: 24
     }}
   >
     {story()}
   </div>
 );
+
 const userDecorator = story => (
   <div
     style={{
@@ -36,7 +39,21 @@ const userDecorator = story => (
   </div>
 );
 
-storiesOf("Header", module).add("Header", () => <Header />);
+const reviewDecorator = story => (
+  <div
+    style={{
+      paddingTop: 200,
+      paddingBottom: 200,
+      background: colors.lightGray
+    }}
+  >
+    {story()}
+  </div>
+);
+
+storiesOf("Header", module)
+  .addDecorator(centeredWithTopMarginDecorator)
+  .add("Header", () => <Header />);
 
 storiesOf("User", module)
   .addDecorator(providerDecorator)
@@ -59,6 +76,45 @@ storiesOf("ExpandableContent", module)
       ]}
     />
   ));
+
+storiesOf("Rating", module)
+  .addDecorator(centeredWithTopMarginDecorator)
+  .add("6/6, thumbs up", () => (
+    <Rating
+      reviewId="review1"
+      reviews={{ review1: { thumbs: "up", stars: 6 } }}
+    />
+  ))
+  .add("5/6, thumbs up", () => (
+    <Rating
+      reviewId="review1"
+      reviews={{ review1: { thumbs: "up", stars: 5 } }}
+    />
+  ))
+  .add("4/6, thumbs up", () => (
+    <Rating
+      reviewId="review1"
+      reviews={{ review1: { thumbs: "up", stars: 4 } }}
+    />
+  ))
+  .add("3/6, thumbs up", () => (
+    <Rating
+      reviewId="review1"
+      reviews={{ review1: { thumbs: "up", stars: 3 } }}
+    />
+  ))
+  .add("2/6, thumbs down", () => (
+    <Rating
+      reviewId="review1"
+      reviews={{ review1: { thumbs: "down", stars: 2 } }}
+    />
+  ))
+  .add("1/6, thumbs down", () => (
+    <Rating
+      reviewId="review1"
+      reviews={{ review1: { thumbs: "down", stars: 1 } }}
+    />
+  ))
 
 storiesOf("Review", module)
   .addDecorator(providerDecorator)

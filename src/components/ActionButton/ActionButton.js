@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { colors } from "../../global/styleConstants";
+import { colors, fontSize } from "../../global/styleConstants";
 
 export const ActionButton = styled.button`
   width: 230px;
@@ -7,7 +7,7 @@ export const ActionButton = styled.button`
 
   border: none;
 
-  font-size: 12px;
+font-size: ${fontSize.small}px;
   font-weight: bold;
   text-transform: uppercase;
   color: ${colors.blue};

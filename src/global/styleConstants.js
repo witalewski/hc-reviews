@@ -1,5 +1,13 @@
 export const maxContainerWidth = 960;
 export const imageDimensions = 76;
+
+export const fontSize = {
+  smaller: 11,
+  small: 12,
+  normal: 14,
+  large: 28
+};
+
 export const spacing = {
   epsilon: 0.1,
   smallest: 4,
