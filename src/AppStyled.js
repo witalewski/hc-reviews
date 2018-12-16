@@ -5,7 +5,7 @@ import background from "./assets/background.jpg";
 export const AppStyled = styled.div`
   min-height: 100vh;
 
-  padding: 30px;
+  padding: 30px 0;
 
   display: flex;
   flex-direction: column;

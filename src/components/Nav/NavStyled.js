@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakpoint } from "../../global/styleConstants";
 export const NavStyled = styled.nav`
   margin: 0;
   padding: 0;
@@ -23,5 +24,11 @@ export const NavStyled = styled.nav`
 
   .list-item.active {
     background-color: #f5f6f7;
+  }
+
+
+
+  @media all and (max-width: ${breakpoint}px) {
+      display: none;
   }
 `;

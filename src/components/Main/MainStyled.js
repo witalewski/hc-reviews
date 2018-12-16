@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { maxContainerWidth, colors } from "../../global/styleConstants";
+import { maxContainerWidth, colors, breakpoint } from "../../global/styleConstants";
 
 export const MainStyled = styled.main`
   width: 100%;
@@ -11,5 +11,12 @@ export const MainStyled = styled.main`
   flex-direction: column;
   align-items: center;
 
-  background: linear-gradient(${colors.lightGray} calc(100% - 60px), transparent calc(100% - 60px));
+  background: linear-gradient(
+    ${colors.lightGray} calc(100% - 60px),
+    transparent calc(100% - 60px)
+  );
+
+  @media all and (max-width: ${breakpoint}px) {
+    margin-top: 200px;
+  }
 `;

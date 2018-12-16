@@ -1,11 +1,11 @@
 import styled from "@emotion/styled";
-import { spacing, fontSize } from "../../global/styleConstants";
+import { spacing, fontSize, breakpoint } from "../../global/styleConstants";
 
 export const ReviewStyled = styled.article`
   margin: 0 160px 80px 160px;
   background: white;
 
-  padding: 0 ${spacing.mediumLarge}px ${spacing.mediumLarge}px;
+  padding: 0 ${spacing.mediumLarge}px ${spacing.mediumLarge}px ${spacing.mediumLarge}px;
 
   display: flex;
   flex-direction: column;
@@ -28,5 +28,10 @@ export const ReviewStyled = styled.article`
     margin-bottom: ${spacing.medium}px;
     padding: 0;
     align-self: stretch;
+  }
+
+  @media all and (max-width: ${breakpoint}px) {
+      margin: 0 0 80px 0;
+      padding: 10px 0;
   }
 `;

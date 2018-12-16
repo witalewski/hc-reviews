@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { colors, spacing } from "../../global/styleConstants";
+import { colors, spacing, breakpoint } from "../../global/styleConstants";
 import commentBackground from "../../assets/commentBackground.svg";
 
 export const NewCommentStyled = styled.div`
@@ -30,5 +30,9 @@ export const NewCommentStyled = styled.div`
   .comment-button {
     flex-basis: calc(50% - 2 * ${spacing.small}px);
     margin: ${spacing.smaller}px ${spacing.small}px;
+  }
+
+  @media all and (max-width: ${breakpoint}px) {
+    padding-top: 3px;
   }
 `;

@@ -1,6 +1,8 @@
 export const maxContainerWidth = 960;
 export const imageDimensions = 76;
 
+export const breakpoint = 768;
+
 export const fontSize = {
   smaller: 11,
   small: 12,
