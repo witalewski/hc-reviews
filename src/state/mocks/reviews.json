@@ -72,33 +72,39 @@
       "user1": {
         "id": "user1",
         "name": "Jesus Diaz",
-        "picture": "https://randomuser.me/api/portraits/women/9.jpg"
+        "picture": "https://randomuser.me/api/portraits/women/9.jpg",
+        "isCurrentUser": false
       },
       "user2": {
         "id": "user2",
         "name": "Väinö Erkkila",
-        "picture": "https://randomuser.me/api/portraits/men/93.jpg"
+        "picture": "https://randomuser.me/api/portraits/men/93.jpg",
+        "isCurrentUser": false
       },
       "user3": {
         "id": "user3",
         "name": "Lineia Da Cruz",
         "picture": "https://randomuser.me/api/portraits/women/45.jpg",
-        "role": "Hotel Manager"
+        "role": "Hotel Manager",
+        "isCurrentUser": false
       },
       "user4": {
         "id": "user4",
         "name": "Kuzey Ağaoğlu",
-        "picture": "https://randomuser.me/api/portraits/men/77.jpg"
+        "picture": "https://randomuser.me/api/portraits/men/77.jpg",
+        "isCurrentUser": false
       },
       "user5": {
         "id": "user5",
         "name": "Catherine Richards",
-        "picture": "https://randomuser.me/api/portraits/women/28.jpg"
+        "picture": "https://randomuser.me/api/portraits/women/28.jpg",
+        "isCurrentUser": false
       },
       "user6": {
         "id": "user6",
         "name": "Ava George",
-        "picture": "https://randomuser.me/api/portraits/women/2.jpg"
+        "picture": "https://randomuser.me/api/portraits/women/2.jpg",
+        "isCurrentUser": true
       }
     },
     "allIds": ["user1", "user2", "user3", "user4", "user5", "user6"]

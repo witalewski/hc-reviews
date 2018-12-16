@@ -1,9 +1,7 @@
 import { createStore, combineReducers } from "redux";
 import mockReviews from "./mocks/reviews.json";
-import mockCurrentUser from "./mocks/currentUser.json";
 
 import { receiveReviews } from "./actions/reviewActions";
-import { receiveCurrentUser } from "./actions/userActions";
 
 import { reviewsReducer } from "./reducers/reviewsReducer";
 import { uiReducer } from "./reducers/uiReducer";
@@ -17,7 +15,6 @@ const reducers = {
 
 const initStore = store => {
   store.dispatch(receiveReviews(mockReviews));
-  store.dispatch(receiveCurrentUser(mockCurrentUser));
   return store;
 };
 
