@@ -19,6 +19,10 @@ export const ExpandableContentStyled = styled.div`
     bottom: 0;
     left: 0;
     height: 40px;
-    background-image: linear-gradient(to bottom, transparent, white);
+    background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 1)
+    );
   }
 `;

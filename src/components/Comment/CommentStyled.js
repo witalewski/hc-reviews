@@ -39,8 +39,8 @@ export const CommentStyled = styled.aside`
     .fade-out {
       background-image: linear-gradient(
         to bottom,
-        transparent,
-        ${colors.mediumLightGray}
+        rgba(237, 240, 242, 0),
+        rgba(237, 240, 242, 1)
       );
     }
   }
