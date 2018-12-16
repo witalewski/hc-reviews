@@ -3,21 +3,33 @@ import { connect } from "react-redux";
 
 import { UserStyled } from "./UserStyled";
 
+const getUserDescription = user => {
+  let userDescription;
+  if (user.isCurrentUser) {
+    userDescription = <div className="name">You</div>;
+  } else if (user.role) {
+    userDescription = (
+      <>
+        <div className="name">{user.name}</div>
+        <div className="role">{user.role}</div>
+      </>
+    );
+  } else {
+    userDescription = (
+      <a className="name" href="/">
+        {user.name}
+      </a>
+    );
+  }
+  return userDescription;
+};
+
 export const User = ({ users, userId, className }) => {
-  const { name, picture, role } = users[userId];
+  const user = users[userId];
   return (
     <UserStyled className={className}>
-      <img className="picture" src={picture} alt={name} />
-      {role ? (
-        <>
-          <div className="name">{name}</div>
-          <div className="role">{role}</div>
-        </>
-      ) : (
-        <a className="name" href="/">
-          {name}
-        </a>
-      )}
+      <img className="picture" src={user.picture} alt={user.name} />
+      {getUserDescription(user)}
     </UserStyled>
   );
 };
