@@ -1,9 +1,9 @@
 {
   "main.css": "/hc-reviews/static/css/main.064450c3.chunk.css",
-  "main.js": "/hc-reviews/static/js/main.f7cffd63.chunk.js",
-  "main.js.map": "/hc-reviews/static/js/main.f7cffd63.chunk.js.map",
-  "static/js/1.b52bae6b.chunk.js": "/hc-reviews/static/js/1.b52bae6b.chunk.js",
-  "static/js/1.b52bae6b.chunk.js.map": "/hc-reviews/static/js/1.b52bae6b.chunk.js.map",
+  "main.js": "/hc-reviews/static/js/main.8252816a.chunk.js",
+  "main.js.map": "/hc-reviews/static/js/main.8252816a.chunk.js.map",
+  "static/js/1.719de333.chunk.js": "/hc-reviews/static/js/1.719de333.chunk.js",
+  "static/js/1.719de333.chunk.js.map": "/hc-reviews/static/js/1.719de333.chunk.js.map",
   "runtime~main.js": "/hc-reviews/static/js/runtime~main.229ef04c.js",
   "runtime~main.js.map": "/hc-reviews/static/js/runtime~main.229ef04c.js.map",
   "static/css/main.064450c3.chunk.css.map": "/hc-reviews/static/css/main.064450c3.chunk.css.map",
@@ -11,6 +11,6 @@
   "static/media/commentBackground.svg": "/hc-reviews/static/media/commentBackground.59262a4c.svg",
   "static/media/logo.svg": "/hc-reviews/static/media/logo.b11697ee.svg",
   "index.html": "/hc-reviews/index.html",
-  "precache-manifest.3fc7ac8e0fb9ea7abc4bcfc277e7680d.js": "/hc-reviews/precache-manifest.3fc7ac8e0fb9ea7abc4bcfc277e7680d.js",
+  "precache-manifest.50b3008fc6e0f195f69396847ba6cdf0.js": "/hc-reviews/precache-manifest.50b3008fc6e0f195f69396847ba6cdf0.js",
   "service-worker.js": "/hc-reviews/service-worker.js"
 }
