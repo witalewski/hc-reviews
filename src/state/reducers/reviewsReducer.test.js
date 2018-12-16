@@ -24,6 +24,7 @@ describe("reviewsReducer", () => {
       }
     };
     const comment = {
+      id: "comment1",
       author: "user3",
       date: "2016-09-21T15:00",
       body: [
@@ -46,10 +47,7 @@ describe("reviewsReducer", () => {
       },
       comments: {
         byId: {
-          comment1: {
-            id: "comment1",
-            ...comment
-          }
+          comment1: comment
         },
         allIds: ["comment1"]
       }
@@ -82,6 +80,7 @@ describe("reviewsReducer", () => {
       }
     };
     const comment = {
+      id: "comment2",
       author: "user4",
       date: "2016-09-21T16:00",
       body: [
@@ -112,10 +111,7 @@ describe("reviewsReducer", () => {
               "In show dull give need so held. One order all scale sense her gay style wrote. Incommode our not one ourselves residence. Shall there whose those stand she end. So unaffected partiality indulgence dispatched to of celebrated remarkably. Unfeeling are had allowance own perceived abilities."
             ]
           },
-          comment2: {
-            id: "comment2",
-            ...comment
-          }
+          comment2: comment
         },
         allIds: ["comment1", "comment2"]
       }
@@ -151,6 +147,7 @@ describe("reviewsReducer", () => {
       }
     };
     const comment = {
+      id: "comment2",
       author: "user4",
       date: "2016-09-21T16:00",
       body: [
@@ -184,10 +181,7 @@ describe("reviewsReducer", () => {
               "In show dull give need so held. One order all scale sense her gay style wrote. Incommode our not one ourselves residence. Shall there whose those stand she end. So unaffected partiality indulgence dispatched to of celebrated remarkably. Unfeeling are had allowance own perceived abilities."
             ]
           },
-          comment2: {
-            id: "comment2",
-            ...comment
-          }
+          comment2: comment
         },
         allIds: ["comment1", "comment2"]
       }
@@ -196,6 +190,7 @@ describe("reviewsReducer", () => {
 
   it("saves new comment in a larger structure", () => {
     const comment = {
+      id: "comment2",
       author: "user4",
       date: "2016-09-21T16:00",
       body: [
@@ -218,7 +213,7 @@ describe("reviewsReducer", () => {
       comments: {
         byId: {
           ...mockState.comments.byId,
-          comment2: { id: "comment2", ...comment }
+          comment2: comment
         },
         allIds: [...mockState.comments.allIds, "comment2"]
       }

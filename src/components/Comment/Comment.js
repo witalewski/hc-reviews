@@ -2,26 +2,38 @@ import React from "react";
 import { connect } from "react-redux";
 import { format } from "date-fns";
 
+import { expandText } from "../../state/actions/uiActions";
+
 import { UserConnected } from "../User";
 import { CommentStyled } from "./CommentStyled";
 
-export const Comment = ({ comments, commentId }) => {
+export const Comment = ({ comments, commentId, ui, expandText }) => {
   const { author, date, body } = comments[commentId];
+  const { isTextExpanded } = ui[commentId];
   return (
     <CommentStyled>
-      <div>
+      <h3 className="header">Comment</h3>
+      <div
+        className={`content ${!isTextExpanded ? "content--collapsed" : ""}`}
+        onClick={() => expandText(commentId)}
+      >
         {body.map(line => (
-          <p>{line}</p>
+          <p className="paragraph">{line}</p>
         ))}
+        <div className="date">{format(date, "d MMMM yyyy")}</div>
+        {!isTextExpanded && <p className="fade-out" />}
       </div>
-      <div>Date: {format(date, "d MMMM yyyy")}</div>
-      <UserConnected userId={author} />
+      <UserConnected userId={author} className="comment-author" />
     </CommentStyled>
   );
 };
 
 const mapStateToProps = state => ({
-  comments: state.reviews.comments.byId
+  comments: state.reviews.comments.byId,
+  ui: state.ui
 });
 
-export const CommentConnected = connect(mapStateToProps)(Comment);
+export const CommentConnected = connect(
+  mapStateToProps,
+  { expandText }
+)(Comment);

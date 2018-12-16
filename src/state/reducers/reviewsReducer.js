@@ -1,38 +1,26 @@
 import { SAVE_COMMENT } from "../actions/commentActions";
 import { RECEIVE_REVIEWS } from "../actions/reviewActions";
 
-const getNextId = (label, ids) =>
-  `${label}${
-    ids.length ? parseInt(ids[ids.length - 1].match(/\d+/)[0]) + 1 : 1
-  }`;
-
-const addCommentToReview = (state, reviewId, comment) => {
-
-  const commentId = getNextId("comment", state.comments.allIds);
-  return {
-    ...state,
-    items: {
-      ...state.items,
-      byId: {
-        ...state.items.byId,
-        [reviewId]: {
-          ...state.items.byId[reviewId],
-          comments: [
-            ...state.items.byId[reviewId].comments,
-            commentId
-          ]
-        }
+const addCommentToReview = (state, reviewId, comment) => ({
+  ...state,
+  items: {
+    ...state.items,
+    byId: {
+      ...state.items.byId,
+      [reviewId]: {
+        ...state.items.byId[reviewId],
+        comments: [...state.items.byId[reviewId].comments, comment.id]
       }
-    },
-    comments: {
-      byId: {
-        ...state.comments.byId,
-        [commentId]: { id: commentId, ...comment }
-      },
-      allIds: [...state.comments.allIds, commentId]
     }
+  },
+  comments: {
+    byId: {
+      ...state.comments.byId,
+      [comment.id]: comment
+    },
+    allIds: [...state.comments.allIds, comment.id]
   }
-}
+});
 
 export const reviewsReducer = (state = {}, action) => {
   switch (action.type) {

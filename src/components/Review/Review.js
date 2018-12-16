@@ -30,6 +30,7 @@ export const Review = ({
     reviewId
   ];
   const { isTextExpanded, isCommentBeingAdded } = ui[reviewId];
+  const { nextCommentId } = ui;
   const commentInputRef = createRef();
   return (
     <ReviewStyled>
@@ -39,7 +40,7 @@ export const Review = ({
       <div>Thumbs: {thumbs}</div>
       <div>Stars: {stars}/6</div>
       <div
-        className={`content ${!isTextExpanded && "content--collapsed"}`}
+        className={`content ${!isTextExpanded ? "content--collapsed" : ""}`}
         onClick={() => expandText(reviewId)}
       >
         {body.map(line => (
@@ -60,6 +61,7 @@ export const Review = ({
             onClick={() =>
               saveComment(
                 {
+                  id: nextCommentId,
                   author: user.id,
                   body: commentInputRef.current.value.split(/\n/g),
                   date: formatDateForPersistence(new Date())

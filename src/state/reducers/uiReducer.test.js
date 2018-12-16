@@ -12,10 +12,13 @@ describe("uiReducer", () => {
     expect(result).toBeDefined();
   });
 
-  it("creates entries for received reviews (sample)", () => {
+  it("creates entries for received reviews and comments (sample)", () => {
     const reviews = {
       items: {
         allIds: ["review1", "review2"]
+      },
+      comments: {
+        allIds: ["comment1", "comment2"]
       }
     };
     const result = uiReducer(undefined, receiveReviews(reviews));
@@ -27,11 +30,18 @@ describe("uiReducer", () => {
       review2: {
         isTextExpanded: false,
         isCommentBeingAdded: false
-      }
+      },
+      comment1: {
+        isTextExpanded: false,
+      },
+      comment2: {
+        isTextExpanded: false,
+      },
+      nextCommentId: "comment3"
     });
   });
 
-  it("creates entries for received reviews (mock data)", () => {
+  it("creates entries for received reviews and comments (mock data)", () => {
     const result = uiReducer(undefined, receiveReviews(mockReviews));
     expect(result).toEqual({
       review1: {
@@ -49,7 +59,11 @@ describe("uiReducer", () => {
       review4: {
         isTextExpanded: false,
         isCommentBeingAdded: false
-      }
+      },
+      comment1: {
+        isTextExpanded: false,
+      },
+      nextCommentId: "comment2"
     });
   });
 
@@ -101,7 +115,7 @@ describe("uiReducer", () => {
     });
   });
 
-  it("removes new comment input when it is saved", () => {
+  it("removes new comment input and updates comments when comment is saved", () => {
     const initialState = {
       review1: {
         isTextExpanded: false,
@@ -112,7 +126,7 @@ describe("uiReducer", () => {
         isCommentBeingAdded: false
       }
     };
-    const result = uiReducer(initialState, saveComment(null,"review1"));
+    const result = uiReducer(initialState, saveComment({id: "comment1"},"review1"));
     expect(result).toEqual({
       review1: {
         isTextExpanded: false,
@@ -121,7 +135,11 @@ describe("uiReducer", () => {
       review2: {
         isTextExpanded: false,
         isCommentBeingAdded: false
-      }
+      },
+      comment1: {
+        isTextExpanded: false,
+      },
+      nextCommentId: "comment2"
     });
   });
 
