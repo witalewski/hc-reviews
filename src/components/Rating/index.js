@@ -1,2 +1,1 @@
 export { RatingConnected } from "./Rating";
-
