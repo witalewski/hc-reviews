@@ -3,7 +3,11 @@ import mockReviews from "../mocks/reviews.json";
 import { uiReducer } from "./uiReducer";
 
 import { receiveReviews } from "../actions/reviewActions";
-import { addComment, saveComment, cancelComment } from "../actions/commentActions";
+import {
+  addComment,
+  saveComment,
+  cancelComment
+} from "../actions/commentActions";
 import { expandText } from "../actions/uiActions";
 
 describe("uiReducer", () => {
@@ -32,10 +36,10 @@ describe("uiReducer", () => {
         isCommentBeingAdded: false
       },
       comment1: {
-        isTextExpanded: false,
+        isTextExpanded: false
       },
       comment2: {
-        isTextExpanded: false,
+        isTextExpanded: false
       },
       nextCommentId: "comment3"
     });
@@ -61,7 +65,7 @@ describe("uiReducer", () => {
         isCommentBeingAdded: false
       },
       comment1: {
-        isTextExpanded: false,
+        isTextExpanded: false
       },
       nextCommentId: "comment2"
     });
@@ -126,7 +130,10 @@ describe("uiReducer", () => {
         isCommentBeingAdded: false
       }
     };
-    const result = uiReducer(initialState, saveComment({id: "comment1"},"review1"));
+    const result = uiReducer(
+      initialState,
+      saveComment({ id: "comment1" }, "review1")
+    );
     expect(result).toEqual({
       review1: {
         isTextExpanded: false,
@@ -137,7 +144,7 @@ describe("uiReducer", () => {
         isCommentBeingAdded: false
       },
       comment1: {
-        isTextExpanded: false,
+        isTextExpanded: false
       },
       nextCommentId: "comment2"
     });

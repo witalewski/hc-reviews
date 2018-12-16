@@ -20,7 +20,9 @@ export const ExpandableContent = ({
       onClick={() => expandText(id)}
     >
       {body.map(line => (
-        <p className="paragraph" key={line}>{line}</p>
+        <p className="paragraph" key={line}>
+          {line}
+        </p>
       ))}
       {children}
       {!isTextExpanded && <p className="fade-out" />}

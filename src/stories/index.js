@@ -48,9 +48,17 @@ storiesOf("User", module)
   .add("User 5", () => <UserConnected userId="user5" />)
   .add("User 6", () => <UserConnected userId="user6" />);
 
-  storiesOf("ExpandableContent", module)
+storiesOf("ExpandableContent", module)
   .addDecorator(providerDecorator)
-  .add("Sample", () => <ExpandableContentConnected id="review1" body={["Instrument cultivated alteration any favourable expression law far nor. Both new like tore but year. An from mean on with when sing pain. Oh to as principles devonshire companions unsatiable an delightful. The ourselves suffering the sincerity. Inhabit her manners adapted age certain. Debating offended at branched striking be subjects.","Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it. Farther be chapter at visited married in it pressed. By distrusts procuring be oh frankness existence believing instantly if. Doubtful on an juvenile as of servants insisted. Judge why maids led sir whose guest drift her point. Him comparison especially friendship was who sufficient attachment favourable how. Luckily but minutes ask picture man perhaps are inhabit. How her good all sang more why."]} />)
+  .add("Sample", () => (
+    <ExpandableContentConnected
+      id="review1"
+      body={[
+        "Instrument cultivated alteration any favourable expression law far nor. Both new like tore but year. An from mean on with when sing pain. Oh to as principles devonshire companions unsatiable an delightful. The ourselves suffering the sincerity. Inhabit her manners adapted age certain. Debating offended at branched striking be subjects.",
+        "Yourself required no at thoughts delicate landlord it be. Branched dashwood do is whatever it. Farther be chapter at visited married in it pressed. By distrusts procuring be oh frankness existence believing instantly if. Doubtful on an juvenile as of servants insisted. Judge why maids led sir whose guest drift her point. Him comparison especially friendship was who sufficient attachment favourable how. Luckily but minutes ask picture man perhaps are inhabit. How her good all sang more why."
+      ]}
+    />
+  ));
 
 storiesOf("Review", module)
   .addDecorator(providerDecorator)

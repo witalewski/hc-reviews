@@ -13,10 +13,10 @@ describe("userReducer", () => {
   it("stores information about current user", () => {
     const result = userReducer(undefined, receiveReviews(mockReviews));
     expect(result).toEqual({
-        id: "user6",
-        name: "Ava George",
-        picture: "https://randomuser.me/api/portraits/women/2.jpg",
-        isCurrentUser: true
+      id: "user6",
+      name: "Ava George",
+      picture: "https://randomuser.me/api/portraits/women/2.jpg",
+      isCurrentUser: true
     });
   });
 });
