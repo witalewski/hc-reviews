@@ -16,19 +16,19 @@ self.__precacheManifest = [
     "url": "/hc-reviews/static/js/runtime~main.229ef04c.js"
   },
   {
-    "revision": "0c910372ebb6a098b454",
-    "url": "/hc-reviews/static/js/main.0c910372.chunk.js"
+    "revision": "00234a31428edb8d4f46",
+    "url": "/hc-reviews/static/js/main.00234a31.chunk.js"
   },
   {
     "revision": "05a5bed000dc6d49a389",
     "url": "/hc-reviews/static/js/1.05a5bed0.chunk.js"
   },
   {
-    "revision": "0c910372ebb6a098b454",
+    "revision": "00234a31428edb8d4f46",
     "url": "/hc-reviews/static/css/main.e1e8dd70.chunk.css"
   },
   {
-    "revision": "bc2367475c688cce91e692f7cbe84845",
+    "revision": "877dc4d9add7ce5a4de7f91675cf22b7",
     "url": "/hc-reviews/index.html"
   }
 ];
