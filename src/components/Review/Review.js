@@ -32,11 +32,9 @@ export const Review = ({ reviews, reviewId, ui, addComment }) => {
         className="content"
         body={body}
       />
-      <div>
-        {comments.map(commentId => (
-          <CommentConnected key={commentId} commentId={commentId} />
-        ))}
-      </div>
+      {comments.map(commentId => (
+        <CommentConnected key={commentId} commentId={commentId} />
+      ))}
       {isCommentBeingAdded ? (
         <NewCommentConnected reviewId={reviewId} />
       ) : (
