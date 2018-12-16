@@ -1,9 +1,6 @@
 import React, { createRef } from "react";
 import { connect } from "react-redux";
-import {
-  formatDateForDisplay,
-  formatDateForPersistence
-} from "../../utils/dateFormatter";
+import { formatDateForPersistence } from "../../utils/dateFormatter";
 
 import {
   addComment,
@@ -15,6 +12,7 @@ import { ReviewStyled } from "./ReviewStyled";
 import { CommentConnected } from "../Comment";
 import { UserConnected } from "../User";
 import { ExpandableContentConnected } from "../ExpandableContent";
+import { Date } from "../Date";
 
 export const Review = ({
   reviews,
@@ -34,7 +32,7 @@ export const Review = ({
   return (
     <ReviewStyled>
       <UserConnected userId={author} />
-      <div className="date">{formatDateForDisplay(date)}</div>
+      <Date date={date} />
       <h2 className="title">{title}</h2>
       <div>Thumbs: {thumbs}</div>
       <div>Stars: {stars}/6</div>

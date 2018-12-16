@@ -1,10 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
-import { format } from "date-fns";
 
 import { UserConnected } from "../User";
 import { CommentStyled } from "./CommentStyled";
 import { ExpandableContentConnected } from "../ExpandableContent";
+import { Date } from "../Date";
 
 export const Comment = ({ comments, commentId }) => {
   const { author, date, body } = comments[commentId];
@@ -16,7 +16,7 @@ export const Comment = ({ comments, commentId }) => {
         className="content"
         body={body}
       >
-        <div className="date">{format(date, "d MMMM yyyy")}</div>
+        <Date date={date} />
       </ExpandableContentConnected>
       <UserConnected userId={author} className="comment-author" />
     </CommentStyled>
@@ -24,9 +24,7 @@ export const Comment = ({ comments, commentId }) => {
 };
 
 const mapStateToProps = state => ({
-  comments: state.reviews.comments.byId,
+  comments: state.reviews.comments.byId
 });
 
-export const CommentConnected = connect(
-  mapStateToProps
-)(Comment);
+export const CommentConnected = connect(mapStateToProps)(Comment);

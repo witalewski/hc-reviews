@@ -11,13 +11,6 @@ export const ReviewStyled = styled.article`
   flex-direction: column;
   align-items: center;
 
-  .date {
-    color: ${colors.darkGray};
-    font-size: 11px;
-    font-weight: 300;
-    text-align: center;
-  }
-
   .title {
     font-size: 28px;
     font-weight: 300;
