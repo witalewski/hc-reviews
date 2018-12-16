@@ -13,7 +13,8 @@ export const ReviewStyled = styled.article`
 
   .date {
     color: ${colors.darkGray};
-    font-size: 12px;
+    font-size: 11px;
+    font-weight: 300;
   }
 
   .title {
