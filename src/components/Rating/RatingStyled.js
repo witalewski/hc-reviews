@@ -6,7 +6,7 @@ export const RatingStyled = styled.div`
     width: 66px;
     height: 48px;
 
-    padding-top: 13px;
+    padding-top: 14px;
 
     color: white;
     text-align: center;
