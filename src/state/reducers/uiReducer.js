@@ -45,7 +45,9 @@ const setIsTextExpanded = (state, reviewId, isTextExpanded) => ({
   }
 });
 
-export const uiReducer = (state = { nextCommentId: 1 }, action) => {
+const initialState = { nextCommentId: 1 };
+
+export const uiReducer = (state = initialState, action) => {
   switch (action.type) {
     case RECEIVE_REVIEWS:
       return addCommentEntries(

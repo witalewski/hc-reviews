@@ -22,7 +22,22 @@ const addCommentToReview = (state, reviewId, comment) => ({
   }
 });
 
-export const reviewsReducer = (state = {}, action) => {
+const initialState = {
+  items: {
+    byId: {},
+    allIds: []
+  },
+  comments: {
+    byId: {},
+    allIds: []
+  },
+  users: {
+    byId: {},
+    allIds: []
+  }
+};
+
+export const reviewsReducer = (state = initialState, action) => {
   switch (action.type) {
     case RECEIVE_REVIEWS:
       return action.reviews;
