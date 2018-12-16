@@ -3,7 +3,7 @@ import commentBackground from "../../assets/commentBackground.svg";
 import { spacing, colors, fontSize } from "../../global/styleConstants";
 
 export const CommentStyled = styled.aside`
-  margin-bottom: 100px;
+  margin-bottom: 120px;
 
   background: linear-gradient(transparent 14px, ${colors.mediumLightGray} 0px);
 
