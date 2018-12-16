@@ -11,5 +11,5 @@ export const MainStyled = styled.main`
   flex-direction: column;
   align-items: center;
 
-  background: ${colors.lightGray};
+  background: linear-gradient(${colors.lightGray} calc(100% - 60px), transparent calc(100% - 60px));
 `;

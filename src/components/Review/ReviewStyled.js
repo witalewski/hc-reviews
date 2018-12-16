@@ -13,7 +13,7 @@ export const ReviewStyled = styled.article`
 
   box-shadow: 0px 10px 30px 10px rgba(0, 0, 0, 0.1);
 
-  transform: translateY(-132px);
+  transform: translateY(-126px);
 
   .title {
     font-size: ${fontSize.large}px;
