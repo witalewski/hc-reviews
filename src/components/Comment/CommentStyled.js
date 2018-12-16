@@ -26,7 +26,7 @@ export const CommentStyled = styled.aside`
     font-weight: 600;
   }
 
-  .content {
+  .comment-content {
     margin: 0 ${spacing.mediumSmall}px;
     padding: 0 ${spacing.mediumSmall}px ${spacing.small}px;
 

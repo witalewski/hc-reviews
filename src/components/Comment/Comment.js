@@ -14,7 +14,7 @@ export const Comment = ({ comments, commentId, ui, expandText }) => {
     <CommentStyled>
       <h3 className="header">Comment</h3>
       <div
-        className={`content ${!isTextExpanded ? "content--collapsed" : ""}`}
+        className={`content comment-content ${!isTextExpanded ? "content--collapsed comment-content--collapsed" : ""}`}
         onClick={() => expandText(commentId)}
       >
         {body.map(line => (
