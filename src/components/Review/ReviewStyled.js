@@ -19,4 +19,8 @@ export const ReviewStyled = styled.article`
     text-align: center;
     padding: 0 ${spacing.mediumLarge}px;
   }
+
+  .comment {
+    align-self: stretch;
+  }
 `;

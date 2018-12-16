@@ -9,7 +9,7 @@ import { Date } from "../Date";
 export const Comment = ({ comments, commentId }) => {
   const { author, date, body } = comments[commentId];
   return (
-    <CommentStyled>
+    <CommentStyled className="comment">
       <h3 className="header">Comment</h3>
       <ExpandableContentConnected
         id={commentId}
