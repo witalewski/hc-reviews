@@ -5,14 +5,14 @@ export const Nav = () => (
   <NavStyled>
     <ul className="list">
       <li className="list-item">
-        <a href="/">Dashboard</a>
+        <a href="/hc-reviews">Dashboard</a>
       </li>
       <li className="list-item active">Reviews</li>
       <li className="list-item">
-        <a href="/">Hotel Manager</a>
+        <a href="/hc-reviews">Hotel Manager</a>
       </li>
       <li className="list-item">
-        <a href="/">Settings</a>
+        <a href="/hc-reviews">Settings</a>
       </li>
     </ul>
   </NavStyled>
