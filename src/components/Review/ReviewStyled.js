@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { colors, spacing } from "../../global/styleConstants";
+import { spacing } from "../../global/styleConstants";
 
 export const ReviewStyled = styled.article`
   margin: -132px 160px 200px 160px;
@@ -14,6 +14,7 @@ export const ReviewStyled = styled.article`
   .title {
     font-size: 28px;
     font-weight: 300;
+    text-align: center;
     padding: 0 ${spacing.mediumLarge}px;
   }
 `;

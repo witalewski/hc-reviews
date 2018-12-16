@@ -1,4 +1,4 @@
-import React, { createRef } from "react";
+import React, { Component, createRef } from "react";
 import { connect } from "react-redux";
 
 import { formatDateForPersistence } from "../../utils/dateFormatter";
@@ -7,43 +7,58 @@ import { saveComment, cancelComment } from "../../state/actions/commentActions";
 import { NewCommentStyled } from "./NewCommentStyled";
 import { ActionButton } from "../ActionButton";
 
-export const NewComment = ({
-  reviewId,
-  ui,
-  user,
-  saveComment,
-  cancelComment
-}) => {
-  const { nextCommentId } = ui;
-  const commentInputRef = createRef();
+export class NewComment extends Component {
+  commentInputRef = createRef();
 
-  const onSaveButtonClick = () =>
+  componentDidMount() {
+    this.commentInputRef.current.focus();
+  }
+
+  onSaveButtonClick = () => {
+    const {
+      ui: { nextCommentId },
+      user,
+      reviewId,
+      saveComment
+    } = this.props;
     saveComment(
       {
         id: nextCommentId,
         author: user.id,
-        body: commentInputRef.current.value
+        body: this.commentInputRef.current.value
           .split(/\n/g)
           .filter(line => line.length),
         date: formatDateForPersistence(new Date())
       },
       reviewId
     );
+  };
 
-  const onCancelButtonClick = () => cancelComment(reviewId);
+  onCancelButtonClick = () => {
+    const { reviewId, cancelComment } = this.props;
+    cancelComment(reviewId);
+  };
 
-  return (
-    <NewCommentStyled>
-      <textarea ref={commentInputRef} />
-      <ActionButton className="comment-button" onClick={onSaveButtonClick}>
-        Save comment
-      </ActionButton>
-      <ActionButton className="comment-button" onClick={onCancelButtonClick}>
-        Cancel
-      </ActionButton>
-    </NewCommentStyled>
-  );
-};
+  render() {
+    return (
+      <NewCommentStyled>
+        <textarea className="comment-input" ref={this.commentInputRef} />
+        <ActionButton
+          className="comment-button"
+          onClick={this.onSaveButtonClick}
+        >
+          Save comment
+        </ActionButton>
+        <ActionButton
+          className="comment-button"
+          onClick={this.onCancelButtonClick}
+        >
+          Cancel
+        </ActionButton>
+      </NewCommentStyled>
+    );
+  }
+}
 
 const mapStateToProps = state => ({
   ui: state.ui,
