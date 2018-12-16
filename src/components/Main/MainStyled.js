@@ -4,6 +4,7 @@ import { maxContainerWidth, colors, breakpoint } from "../../global/styleConstan
 export const MainStyled = styled.main`
   width: 100%;
   max-width: ${maxContainerWidth}px;
+  min-height: 50vh;
 
   margin-top: 340px;
 
