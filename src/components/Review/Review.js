@@ -45,7 +45,7 @@ export const Review = ({
       />
       <div>
         {comments.map(commentId => (
-          <CommentConnected commentId={commentId} />
+          <CommentConnected key={commentId} commentId={commentId} />
         ))}
       </div>
       {isCommentBeingAdded ? (

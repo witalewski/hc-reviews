@@ -7,7 +7,7 @@ export const Main = ({ reviewIds }) => {
   return (
     <MainStyled>
       {reviewIds.map(id => (
-        <ReviewConnected reviewId={id} />
+        <ReviewConnected key={id} reviewId={id} />
       ))}
     </MainStyled>
   );
