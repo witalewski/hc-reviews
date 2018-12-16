@@ -10,11 +10,11 @@ import {
   saveComment,
   cancelComment
 } from "../../state/actions/commentActions";
-import { expandText } from "../../state/actions/uiActions";
 
 import { ReviewStyled } from "./ReviewStyled";
 import { CommentConnected } from "../Comment";
 import { UserConnected } from "../User";
+import { ExpandableContentConnected } from "../ExpandableContent";
 
 export const Review = ({
   reviews,
@@ -23,13 +23,12 @@ export const Review = ({
   addComment,
   saveComment,
   cancelComment,
-  expandText,
   user
 }) => {
   const { author, date, title, body, thumbs, stars, comments } = reviews[
     reviewId
   ];
-  const { isTextExpanded, isCommentBeingAdded } = ui[reviewId];
+  const { isCommentBeingAdded } = ui[reviewId];
   const { nextCommentId } = ui;
   const commentInputRef = createRef();
   return (
@@ -39,15 +38,11 @@ export const Review = ({
       <h2 className="title">{title}</h2>
       <div>Thumbs: {thumbs}</div>
       <div>Stars: {stars}/6</div>
-      <div
-        className={`content ${!isTextExpanded ? "content--collapsed" : ""}`}
-        onClick={() => expandText(reviewId)}
-      >
-        {body.map(line => (
-          <p>{line}</p>
-        ))}
-        {!isTextExpanded && <p className="fade-out" />}
-      </div>
+      <ExpandableContentConnected
+        id={reviewId}
+        className="content"
+        body={body}
+      />
       <div>
         {comments.map(commentId => (
           <CommentConnected commentId={commentId} />
@@ -63,7 +58,9 @@ export const Review = ({
                 {
                   id: nextCommentId,
                   author: user.id,
-                  body: commentInputRef.current.value.split(/\n/g),
+                  body: commentInputRef.current.value
+                    .split(/\n/g)
+                    .filter(line => line.length),
                   date: formatDateForPersistence(new Date())
                 },
                 reviewId
@@ -97,8 +94,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
   addComment,
   saveComment,
-  cancelComment,
-  expandText
+  cancelComment
 };
 
 export const ReviewConnected = connect(

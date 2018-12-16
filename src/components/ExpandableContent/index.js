@@ -1,0 +1,1 @@
+export { ExpandableContentConnected } from "./ExpandableContent";

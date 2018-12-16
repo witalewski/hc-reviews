@@ -26,11 +26,11 @@ export const CommentStyled = styled.aside`
     font-weight: 600;
   }
 
-  .comment-content {
+  .content {
     margin: 0 ${spacing.mediumSmall}px;
     padding: 0 ${spacing.mediumSmall}px ${spacing.small}px;
 
-    &--collapsed {
+    &.collapsed {
       max-height: 60px;
     }
 

@@ -24,28 +24,6 @@ export const ReviewStyled = styled.article`
     padding: 0 ${spacing.mediumLarge}px;
   }
 
-  .content {
-    position: relative;
-    margin-bottom: ${spacing.medium}px;
-    padding: 0 ${spacing.mediumLarge}px;
-
-    &--collapsed {
-      overflow: hidden;
-      max-height: 90px;
-      cursor: pointer;
-    }
-
-    .fade-out {
-      position: absolute;
-      margin: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      height: 40px;
-      background-image: linear-gradient(to bottom, transparent, white);
-    }
-  }
-
   .comment-button {
     width: 230px;
     height: 50px;
