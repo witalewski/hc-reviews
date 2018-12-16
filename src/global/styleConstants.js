@@ -20,6 +20,7 @@ export const spacing = {
   large: 48,
   larger: 76
 };
+
 export const colors = {
   lightGray: "#f5f6f7",
   mediumLightGray: "#edf0f2",
