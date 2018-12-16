@@ -14,6 +14,7 @@ import { ExpandableContentConnected } from "../ExpandableContent";
 import { Date } from "../Date";
 import { NewCommentConnected } from "../NewComment";
 import { ActionButton } from "../ActionButton";
+import { RatingConnected } from "../Rating/Rating";
 
 const getCommentListItem = commentId => (
   <li key={commentId}>
@@ -22,7 +23,7 @@ const getCommentListItem = commentId => (
 );
 
 export const Review = ({ reviews, reviewId, ui, addComment }) => {
-  const { author, date, title, body, thumbs, stars, comments } = reviews[
+  const { author, date, title, body, comments } = reviews[
     reviewId
   ];
   const { isCommentBeingAdded } = ui[reviewId];
@@ -31,8 +32,7 @@ export const Review = ({ reviews, reviewId, ui, addComment }) => {
       <UserConnected userId={author} />
       <Date date={date} />
       <h2 className="title">{title}</h2>
-      <div>Thumbs: {thumbs}</div>
-      <div>Stars: {stars}/6</div>
+      <RatingConnected reviewId={reviewId} />
       <ExpandableContentConnected
         id={reviewId}
         className="content"
