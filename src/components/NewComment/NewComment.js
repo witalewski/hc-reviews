@@ -14,24 +14,24 @@ export class NewComment extends Component {
     this.commentInputRef.current.focus();
   }
 
-  onSaveButtonClick = () => {
+  createNewComment = () => {
     const {
       ui: { nextCommentId },
-      user,
-      reviewId,
-      saveComment
+      user
     } = this.props;
-    saveComment(
-      {
-        id: nextCommentId,
-        author: user.id,
-        body: this.commentInputRef.current.value
-          .split(/\n/g)
-          .filter(line => line.length),
-        date: formatDateForPersistence(new Date())
-      },
-      reviewId
-    );
+    return {
+      id: nextCommentId,
+      author: user.id,
+      body: this.commentInputRef.current.value
+        .split(/\n/g)
+        .filter(line => line.length),
+      date: formatDateForPersistence(new Date())
+    };
+  };
+
+  onSaveButtonClick = () => {
+    const { reviewId, saveComment } = this.props;
+    saveComment(this.createNewComment(), reviewId);
   };
 
   onCancelButtonClick = () => {

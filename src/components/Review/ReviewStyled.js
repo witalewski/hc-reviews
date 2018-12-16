@@ -22,7 +22,9 @@ export const ReviewStyled = styled.article`
     padding: 0 ${spacing.mediumLarge}px;
   }
 
-  .comment {
+  .comments-list {
+    list-style: none;
+    padding: 0;
     align-self: stretch;
   }
 `;

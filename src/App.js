@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { AppStyled } from "./AppStyled";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
-import { MainConnected } from "./components/Main/Main";
+import { MainConnected } from "./components/Main";
 
 class App extends Component {
   render() {

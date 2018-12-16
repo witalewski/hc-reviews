@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
+import { colors, spacing } from "../../global/styleConstants";
 
 
 export const FooterStyled = styled.footer`
-    color: #f5f6f7;
+    margin-top: ${spacing.larger}px;
+    color: ${colors.darkGray};
 `;

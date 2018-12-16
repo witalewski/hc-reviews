@@ -15,6 +15,12 @@ import { Date } from "../Date";
 import { NewCommentConnected } from "../NewComment";
 import { ActionButton } from "../ActionButton";
 
+const getCommentListItem = commentId => (
+  <li key={commentId}>
+    <CommentConnected commentId={commentId} />
+  </li>
+);
+
 export const Review = ({ reviews, reviewId, ui, addComment }) => {
   const { author, date, title, body, thumbs, stars, comments } = reviews[
     reviewId
@@ -32,9 +38,7 @@ export const Review = ({ reviews, reviewId, ui, addComment }) => {
         className="content"
         body={body}
       />
-      {comments.map(commentId => (
-        <CommentConnected key={commentId} commentId={commentId} />
-      ))}
+      <ul className="comments-list">{comments.map(getCommentListItem)}</ul>
       {isCommentBeingAdded ? (
         <NewCommentConnected reviewId={reviewId} />
       ) : (

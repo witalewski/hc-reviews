@@ -18,7 +18,6 @@ export const NewCommentStyled = styled.div`
     height: 10px;
     width: 100%;
     background-image: url(${commentBackground});
-    background-color: none;
     background-size: cover;
   }
 

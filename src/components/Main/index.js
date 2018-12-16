@@ -1,0 +1,1 @@
+export { MainConnected } from './Main';
