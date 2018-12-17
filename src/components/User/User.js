@@ -16,7 +16,7 @@ const getUserDescription = user => {
     );
   } else {
     userDescription = (
-      <a className="name" href="/">
+      <a className="name" href="/hc-reviews">
         {user.name}
       </a>
     );
